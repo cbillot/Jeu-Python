@@ -1,18 +1,18 @@
 import os
 import time
 
-##CREATION DE COULEUR
+##COLOR CREATION
 
 RESET = "\033[0m"
 ROUGE = "\033[31m"
 VERT = "\033[32m"
 
-##FONCTIONS CLEAR
+## CLEAR FUNCTION
 
 def console_clear():
     os.system('cls')
 
-##FONCTIONS CREATION MAP + CREATION POSITIONS
+##FUNCTIONS MAP CREATE + INITIALIZE POSITION
 
 victoire = False
 map = []
@@ -41,7 +41,7 @@ def create_map():
     map[boite_pos[1]][boite_pos[0]] = 'X'
     map[case_pos[1]][case_pos[0]] = 'o'
 
-##Fonction de check pour déterminer la victoire
+##CHECK VICTORY FUNCTION
 
 def check_victoire():
     global victoire
@@ -49,13 +49,13 @@ def check_victoire():
         victoire = True
 
 
-##Fonction d'affichage de la map
+##PRINT THE MAP FUNCTION
 
 def print_map():
     for count in map:
         print(" ".join(count))
 
-##FONCTIONS EXPLICATION DU JEU + LANCEMENT
+##GAME START + EXPLICATION
 
 def explication_jeu():
     print(f"\n{VERT}Bienvenue sur le jeu des boîtes !\n")
@@ -84,7 +84,7 @@ def lancement_jeu():
         print("Erreur vous avez rentré la mauvaise lettre !")
         lancement_jeu()
 
-##FONCTIONS BOUCLE DU JEU + GESTION DES TOUCHES
+##KEYBINDS HANDLING + GAME LOOP
 
 def boucle_jeu():
     global victoire
@@ -125,7 +125,7 @@ def boucle_jeu():
         elif key == 'D':
             deplacement_droite()
 
-##FONCTIONS DEPLACEMENTS DU JOUEUR
+##MOVEMENTS FOR THE PLAYER
 
 def deplacement_haut():
     global victoire
